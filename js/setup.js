@@ -1,7 +1,7 @@
 'use strict';
 // Открытие и закрытие всплывающего окна;
 var setupOpen = document.querySelector('.setup-open');
-var showSetup = document.querySelector('.setup ');
+var showSetup = document.querySelector('.setup');
 var setupClose = document.querySelector('.setup-close');
 
 setupOpen.addEventListener('click', function () {
@@ -13,34 +13,34 @@ setupClose.addEventListener('click', function () {
 });
 
 // Изменение цвета куртки у волшебника;
+var COLOR_COAT_ARR = ['rgb(101, 137, 164)', 'rgb(241, 43, 107)', 'rgb(146, 100, 161)', 'rgb(56, 159, 117)', 'rgb(215, 210, 55)', 'rgb(0, 0, 0)'];
 var wizardCoat = document.querySelector('#wizard-coat');
-var changeColorCoat = function () {
-  var colorCoatArr = ['rgb(101, 137, 164)', 'rgb(241, 43, 107)', 'rgb(146, 100, 161)', 'rgb(56, 159, 117)', 'rgb(215, 210, 55)', 'rgb(0, 0, 0)'];
-  return colorCoatArr[Math.floor(Math.random() * colorCoatArr.length)];
+var randomColorCoat = function () {
+  return COLOR_COAT_ARR[Math.floor(Math.random() * COLOR_COAT_ARR.length)];
 };
 
 wizardCoat.addEventListener('click', function () {
-  this.style.fill = changeColorCoat();
+  wizardCoat.style.fill = randomColorCoat();
 });
 
 // Изменение цвета глаз
+var COLOR_EYES_ARR = ['black', 'red', 'blue', 'yellow', 'green'];
 var wizardEyes = document.querySelector('#wizard-eyes');
-var changeColorEyes = function () {
-  var colorEyesArr = ['black', 'red', 'blue', 'yellow', 'green'];
-  return colorEyesArr[Math.floor(Math.random() * colorEyesArr.length)];
+var randomColorEyes = function () {
+  return COLOR_EYES_ARR[Math.floor(Math.random() * COLOR_EYES_ARR.length)];
 };
 
 wizardEyes.addEventListener('click', function () {
-  this.style.fill = changeColorEyes();
+  wizardEyes.style.fill = randomColorEyes();
 });
 
 // Изменение цвета файерболла
+var COLOR_FIREBALL_ARR = ['#ee4830', '#30a8ee', '#5ce6c0', '#e848d5', '#e6e848'];
 var fireballColor = document.querySelector('.setup-fireball-wrap');
-var changeColorFireball = function () {
-  var colorFireballArr = ['#ee4830', '#30a8ee', '#5ce6c0', '#e848d5', '#e6e848'];
-  return colorFireballArr[Math.floor(Math.random() * colorFireballArr.length)];
+var randomColorFireball = function () {
+  return COLOR_FIREBALL_ARR[Math.floor(Math.random() * COLOR_FIREBALL_ARR.length)];
 };
 
 fireballColor.addEventListener('click', function () {
-  this.style.background = changeColorFireball();
+  fireballColor.style.background = randomColorFireball();
 });
