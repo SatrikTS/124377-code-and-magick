@@ -8,62 +8,62 @@ var CODE_ENTER_KEY = 13;
 var CODE_ESC_KEY = 27;
 
 var isActivateEvent = function (event) {
-   return event.keyCode && event.keyCode === CODE_ENTER_KEY;
-}
+  return event.keyCode && event.keyCode === CODE_ENTER_KEY;
+};
 
 var setupKeydownHandler = function (event) {
-  if (event.keyCode === CODE_ESC_KEY){
-      closeDialog();
+  if (event.keyCode === CODE_ESC_KEY) {
+    closeDialog();
   }
-}
+};
 
 var showDialog = function () {
   setupDialog.classList.remove('invisible');
   document.addEventListener('keydown', setupKeydownHandler);
-}
+};
 
 var closeDialog = function () {
   setupDialog.classList.add('invisible');
   document.removeEventListener('keydown', setupKeydownHandler);
-}
+};
 
 // Открытие и закрытие диалогового окна по клику
 setupOpen.addEventListener('click', function () {
   showDialog();
-  handleBtnClick(event)
+  handleBtnClick(event);
 });
 
 setupClose.addEventListener('click', function () {
   closeDialog();
-  handleBtnClick(event)
+  handleBtnClick(event);
 });
 
 // Открытие и закрытие диалогового окна по событиям клавиатуры
 setupOpen.addEventListener('keydown', function (event) {
-  if (isActivateEvent(event)){
+  if (isActivateEvent(event)) {
     showDialog();
-    handleBtnClick(event)
+    handleBtnKeyPress(event);
   }
 });
 
-setupClose.addEventListener('keydown', function (event){
-  if (isActivateEvent(event)){
-      closeDialog();
-      handleBtnClick(event)
-    }
+setupClose.addEventListener('keydown', function (event) {
+  if (isActivateEvent(event)) {
+    closeDialog();
+    handleBtnKeyPress(event);
+  }
 });
 
 setupSubmitDialog.addEventListener('click', function (event) {
   event.preventDefault();
   closeDialog();
-  handleBtnClick(event)
+  handleBtnClick(event);
 });
 
 setupSubmitDialog.addEventListener('keydown', function (event) {
   event.preventDefault();
-  if (isActivateEvent(event)){
+  if (isActivateEvent(event)) {
     closeDialog();
-    handleBtnClick(event)
+    handleBtnKeyPress(event);
   }
 });
 
@@ -79,8 +79,8 @@ function handleBtnKeyPress(event) {
 }
 
 function toggleButton(element) {
-  var pressed = (element.getAttribute("aria-pressed") === "true");
-  element.setAttribute("aria-pressed", !pressed);
+  var pressed = (element.getAttribute('aria-pressed') === 'true');
+  element.setAttribute('aria-pressed', !pressed);
 }
 
 // Изменение цвета куртки у волшебника;
