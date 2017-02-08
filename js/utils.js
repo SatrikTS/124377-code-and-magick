@@ -1,19 +1,20 @@
 'use strict'
+
 window.utils = {
   getRandomElement: function (someArray) {
     return someArray[Math.floor(Math.random()*someArray.length)];
   },
   getRandomElementExcept: function (someArray, someElement) {
-    var randomElement = null;
-    do {
-      randomElement = this.getRandomElement(someArray);
-    } while (randomElement === someElement);
-    return randomElement;
+    var currentNum = null; // изначальное состояние элемента
+    while (!currentNum || currentNum === someElement) {  // пока состояние элемента будет совпадать со значение элемента на входе
+      currentNum = this.getRandomElement(someArray); // будем записывать в него новые значения
+    }
+    return currentNum; // Новое состояние элемента
   }
-};
+}
 
-/* Для проверки роботоспособности
-var randomArray = [1, 3, 6, 7, 44, 55, 33, 77];
-console.log(utils.getRandomElement(randomArray));
-console.log(utils.getRandomElementExcept(randomArray, 1));
+/*
+var testArray = [1,3,5,66,77,88];
+utils.getRandomElementExcept(testArray, 77);
+console.log(utils.getRandomElementExcept(testArray, 77));
 */
