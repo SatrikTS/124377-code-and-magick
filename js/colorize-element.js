@@ -1,17 +1,12 @@
-'use strict'
-var CurrentColor = null;
+'use strict';
+
 window.colorizeElement = function (element, colors, property) {
-  element.addEventListener('click', function() {
+  element.addEventListener('click', function () {
+    var CurrentColor = null;
+    element.style[property] = window.utils.getRandomElementExcept(colors, CurrentColor);
+  });
+  element.addEventListener('keydown', function () {
+    var CurrentColor = null;
     element.style[property] = window.utils.getRandomElementExcept(colors, CurrentColor);
   });
 };
-
-
-var testElement = document.querySelector('#wizard-coat');
-var somecolors = ['red', 'orange', 'blue'];
-
-
-/*console.log(testElement);
-console.log(somecolors);
-console.log(window.utils.getRandomElementExcept(somecolors, CurrentColor));
-console.log(colorizeElement(testElement, somecolors, fill));*/

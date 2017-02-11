@@ -1,8 +1,8 @@
-'use strict'
+'use strict';
 
 window.utils = {
   getRandomElement: function (someArray) {
-    return someArray[Math.floor(Math.random()*someArray.length)];
+    return someArray[Math.floor(Math.random() * someArray.length)];
   },
   getRandomElementExcept: function (someArray, someElement) {
     var currentNum = null; // изначальное состояние элемента
@@ -11,10 +11,4 @@ window.utils = {
     }
     return currentNum; // Новое состояние элемента
   }
-}
-
-/*
-var testArray = [1,3,5,66,77,88];
-utils.getRandomElementExcept(testArray, 77);
-console.log(utils.getRandomElementExcept(testArray, 77));
-*/
+};
