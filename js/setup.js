@@ -88,7 +88,7 @@ var wizardCoat = document.querySelector('#wizard-coat');
 var fireballColor = document.querySelector('.setup-fireball-wrap');
 
 var COLOR_EYES_ARR = ['black', 'red', 'blue', 'yellow', 'green'];
-var COLOR_FIREBALL_ARR = ['#ee4830', '#30a8ee', '#5ce6c0', '#e848d5', '#e6e848'];
+var COLOR_FIREBALL_ARR = ['rgb(238, 72, 48)', 'rgb(48, 168, 238)', 'rgb(92, 230, 192)', 'rgb(232, 72, 213)', 'rgb(230, 232, 72)'];
 var COLOR_COAT_ARR = ['rgb(101, 137, 164)', 'rgb(241, 43, 107)', 'rgb(146, 100, 161)', 'rgb(56, 159, 117)', 'rgb(215, 210, 55)', 'rgb(0, 0, 0)'];
 
 
