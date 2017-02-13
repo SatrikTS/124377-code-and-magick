@@ -83,35 +83,19 @@ function toggleButton(element) {
   element.setAttribute('aria-pressed', !pressed);
 }
 
-// Изменение цвета куртки у волшебника;
-var COLOR_COAT_ARR = ['rgb(101, 137, 164)', 'rgb(241, 43, 107)', 'rgb(146, 100, 161)', 'rgb(56, 159, 117)', 'rgb(215, 210, 55)', 'rgb(0, 0, 0)'];
-var wizardCoat = document.querySelector('#wizard-coat');
-var randomColorCoat = function () {
-  return COLOR_COAT_ARR[Math.floor(Math.random() * COLOR_COAT_ARR.length)];
-};
-
-wizardCoat.addEventListener('click', function () {
-  wizardCoat.style.fill = randomColorCoat();
-});
-
-// Изменение цвета глаз
-var COLOR_EYES_ARR = ['black', 'red', 'blue', 'yellow', 'green'];
 var wizardEyes = document.querySelector('#wizard-eyes');
-var randomColorEyes = function () {
-  return COLOR_EYES_ARR[Math.floor(Math.random() * COLOR_EYES_ARR.length)];
-};
-
-wizardEyes.addEventListener('click', function () {
-  wizardEyes.style.fill = randomColorEyes();
-});
-
-// Изменение цвета файерболла
-var COLOR_FIREBALL_ARR = ['#ee4830', '#30a8ee', '#5ce6c0', '#e848d5', '#e6e848'];
+var wizardCoat = document.querySelector('#wizard-coat');
 var fireballColor = document.querySelector('.setup-fireball-wrap');
-var randomColorFireball = function () {
-  return COLOR_FIREBALL_ARR[Math.floor(Math.random() * COLOR_FIREBALL_ARR.length)];
-};
 
-fireballColor.addEventListener('click', function () {
-  fireballColor.style.background = randomColorFireball();
-});
+var COLOR_EYES_ARR = ['black', 'red', 'blue', 'yellow', 'green'];
+var COLOR_FIREBALL_ARR = ['rgb(238, 72, 48)', 'rgb(48, 168, 238)', 'rgb(92, 230, 192)', 'rgb(232, 72, 213)', 'rgb(230, 232, 72)'];
+var COLOR_COAT_ARR = ['rgb(101, 137, 164)', 'rgb(241, 43, 107)', 'rgb(146, 100, 161)', 'rgb(56, 159, 117)', 'rgb(215, 210, 55)', 'rgb(0, 0, 0)'];
+
+
+wizardEyes.setAttribute('tabindex', '0');
+wizardCoat.setAttribute('tabindex', '0');
+fireballColor.setAttribute('tabindex', '0');
+
+window.colorizeElement(wizardEyes, COLOR_EYES_ARR, 'fill');
+window.colorizeElement(wizardCoat, COLOR_COAT_ARR, 'fill');
+window.colorizeElement(fireballColor, COLOR_FIREBALL_ARR, 'background');
