@@ -4,18 +4,22 @@ var setupOpen = document.querySelector('.setup-open img');
 var setupDialog = document.querySelector('.setup');
 var setupClose = setupDialog.querySelector('.setup-close');
 var setupSubmitDialog = document.querySelector('.setup-submit');
-var CODE_ENTER_KEY = 13;
-var CODE_ESC_KEY = 27;
 
-var isActivateEvent = function (event) {
-  return event.keyCode && event.keyCode === CODE_ENTER_KEY;
-};
+var isActivateEvent = (function () {
+  var CODE_ENTER_KEY = 13;
+  return function (event) {
+    return event.keyCode && event.keyCode === CODE_ENTER_KEY;
+  };
+})();
 
-var setupKeydownHandler = function (event) {
-  if (event.keyCode === CODE_ESC_KEY) {
-    closeDialog();
-  }
-};
+var setupKeydownHandler = (function () {
+  var CODE_ESC_KEY = 27;
+  return function (event) {
+    if (event.keyCode === CODE_ESC_KEY) {
+      closeDialog();
+    }
+  };
+})();
 
 var showDialog = function () {
   setupDialog.classList.remove('invisible');
